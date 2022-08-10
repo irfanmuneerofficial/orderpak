@@ -1,0 +1,37 @@
+/* for permission box create */
+.permission {
+    border: 2px solid gray ;
+    margin-top: 6px;
+    padding: 5px;
+    margin-right: 9px;
+    background: #E0E0E0;
+    border-radius: 4px;
+}
+.permission_value {
+    margin-left: 3px;
+    padding: 6px;
+}
+
+.role-box {
+    display: inline-block;
+    border: 2px solid;
+    padding-top: 7px;
+    padding-left: 12px;
+    padding-right: 13px;
+    margin-bottom: 24px;
+    background: #BF0000;
+    color: #ffffff;
+}
+
+.permission-box {
+    border: 2px solid;
+    padding-top: 8px;
+    padding-left: 12px;
+    padding-right: 13px;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    margin-right: 10px;
+    margin-top: 20px;
+    background: yellowgreen;
+    color: #ffffff;
+}

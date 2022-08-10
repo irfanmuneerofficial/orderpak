@@ -1,0 +1,243 @@
+[31-May-2021 11:05:57 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php:836
+Stack trace:
+#0 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php(836): ReflectionClass->__construct('view')
+#1 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php(717): Illuminate\Container\Container->build('view')
+#2 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(841): Illuminate\Container\Container->resolve('view', Array, true)
+#3 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php(655): Illuminate\Foundation\Application->resolve('view', Array)
+#4 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(826): Illuminate\Container\Container->make('view', Array)
+#5 /home3/orderpak/public_html/stage/vendor/laravel/fra in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 838
+[31-May-2021 11:05:57 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php:836
+Stack trace:
+#0 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php(836): ReflectionClass->__construct('view')
+#1 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php(717): Illuminate\Container\Container->build('view')
+#2 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(841): Illuminate\Container\Container->resolve('view', Array, true)
+#3 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php(655): Illuminate\Foundation\Application->resolve('view', Array)
+#4 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(826): Illuminate\Container\Container->make('view', Array)
+#5 /home3/orderpak/public_html/stage/vendor/laravel/fra in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 838
+[31-May-2021 11:06:12 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php:836
+Stack trace:
+#0 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php(836): ReflectionClass->__construct('view')
+#1 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php(717): Illuminate\Container\Container->build('view')
+#2 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(841): Illuminate\Container\Container->resolve('view', Array, true)
+#3 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php(655): Illuminate\Foundation\Application->resolve('view', Array)
+#4 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(826): Illuminate\Container\Container->make('view', Array)
+#5 /home3/orderpak/public_html/stage/vendor/laravel/fra in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 838
+[31-May-2021 11:06:12 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php:836
+Stack trace:
+#0 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php(836): ReflectionClass->__construct('view')
+#1 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php(717): Illuminate\Container\Container->build('view')
+#2 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(841): Illuminate\Container\Container->resolve('view', Array, true)
+#3 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php(655): Illuminate\Foundation\Application->resolve('view', Array)
+#4 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(826): Illuminate\Container\Container->make('view', Array)
+#5 /home3/orderpak/public_html/stage/vendor/laravel/fra in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 838
+[05-Jul-2021 01:52:56 America/Boise] PHP Warning:  Missing boundary in multipart/form-data POST data in Unknown on line 0
+[11-Aug-2021 13:32:54 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php:873
+Stack trace:
+#0 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php(873): ReflectionClass->__construct('view')
+#1 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php(754): Illuminate\Container\Container->build('view')
+#2 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(841): Illuminate\Container\Container->resolve('view', Array, true)
+#3 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php(692): Illuminate\Foundation\Application->resolve('view', Array)
+#4 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(826): Illuminate\Container\Container->make('view', Array)
+#5 /home3/orderpak/public_html/stage/vendor/laravel/fra in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 875
+[11-Aug-2021 13:32:54 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php:873
+Stack trace:
+#0 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php(873): ReflectionClass->__construct('view')
+#1 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php(754): Illuminate\Container\Container->build('view')
+#2 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(841): Illuminate\Container\Container->resolve('view', Array, true)
+#3 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php(692): Illuminate\Foundation\Application->resolve('view', Array)
+#4 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(826): Illuminate\Container\Container->make('view', Array)
+#5 /home3/orderpak/public_html/stage/vendor/laravel/fra in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 875
+[24-Aug-2021 13:44:15 UTC] PHP Fatal error:  Uncaught Error: Call to a member function connection() on null in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1570
+Stack trace:
+#0 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1536): Illuminate\Database\Eloquent\Model::resolveConnection(NULL)
+#1 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1342): Illuminate\Database\Eloquent\Model->getConnection()
+#2 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1259): Illuminate\Database\Eloquent\Model->newBaseQueryBuilder()
+#3 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1295): Illuminate\Database\Eloquent\Model->newModelQuery()
+#4 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1248): Illuminate\Database\Eloquent\Model->newQueryWithoutScope in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 1570
+[24-Aug-2021 13:44:15 UTC] PHP Fatal error:  Uncaught Error: Call to a member function connection() on null in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1570
+Stack trace:
+#0 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1536): Illuminate\Database\Eloquent\Model::resolveConnection(NULL)
+#1 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1342): Illuminate\Database\Eloquent\Model->getConnection()
+#2 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1259): Illuminate\Database\Eloquent\Model->newBaseQueryBuilder()
+#3 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1295): Illuminate\Database\Eloquent\Model->newModelQuery()
+#4 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1248): Illuminate\Database\Eloquent\Model->newQueryWithoutScope in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 1570
+[24-Aug-2021 13:44:18 UTC] PHP Fatal error:  Uncaught Error: Call to a member function connection() on null in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1570
+Stack trace:
+#0 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1536): Illuminate\Database\Eloquent\Model::resolveConnection(NULL)
+#1 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1342): Illuminate\Database\Eloquent\Model->getConnection()
+#2 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1259): Illuminate\Database\Eloquent\Model->newBaseQueryBuilder()
+#3 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1295): Illuminate\Database\Eloquent\Model->newModelQuery()
+#4 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1248): Illuminate\Database\Eloquent\Model->newQueryWithoutScope in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 1570
+[24-Aug-2021 13:44:18 UTC] PHP Fatal error:  Uncaught Error: Call to a member function connection() on null in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1570
+Stack trace:
+#0 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1536): Illuminate\Database\Eloquent\Model::resolveConnection(NULL)
+#1 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1342): Illuminate\Database\Eloquent\Model->getConnection()
+#2 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1259): Illuminate\Database\Eloquent\Model->newBaseQueryBuilder()
+#3 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1295): Illuminate\Database\Eloquent\Model->newModelQuery()
+#4 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1248): Illuminate\Database\Eloquent\Model->newQueryWithoutScope in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 1570
+[24-Aug-2021 13:44:33 UTC] PHP Fatal error:  Uncaught Error: Call to a member function connection() on null in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1570
+Stack trace:
+#0 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1536): Illuminate\Database\Eloquent\Model::resolveConnection(NULL)
+#1 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1342): Illuminate\Database\Eloquent\Model->getConnection()
+#2 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1259): Illuminate\Database\Eloquent\Model->newBaseQueryBuilder()
+#3 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1295): Illuminate\Database\Eloquent\Model->newModelQuery()
+#4 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1248): Illuminate\Database\Eloquent\Model->newQueryWithoutScope in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 1570
+[24-Aug-2021 13:44:33 UTC] PHP Fatal error:  Uncaught Error: Call to a member function connection() on null in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1570
+Stack trace:
+#0 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1536): Illuminate\Database\Eloquent\Model::resolveConnection(NULL)
+#1 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1342): Illuminate\Database\Eloquent\Model->getConnection()
+#2 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1259): Illuminate\Database\Eloquent\Model->newBaseQueryBuilder()
+#3 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1295): Illuminate\Database\Eloquent\Model->newModelQuery()
+#4 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1248): Illuminate\Database\Eloquent\Model->newQueryWithoutScope in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 1570
+[24-Aug-2021 13:44:35 UTC] PHP Fatal error:  Uncaught Error: Call to a member function connection() on null in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1570
+Stack trace:
+#0 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1536): Illuminate\Database\Eloquent\Model::resolveConnection(NULL)
+#1 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1342): Illuminate\Database\Eloquent\Model->getConnection()
+#2 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1259): Illuminate\Database\Eloquent\Model->newBaseQueryBuilder()
+#3 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1295): Illuminate\Database\Eloquent\Model->newModelQuery()
+#4 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1248): Illuminate\Database\Eloquent\Model->newQueryWithoutScope in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 1570
+[24-Aug-2021 13:44:35 UTC] PHP Fatal error:  Uncaught Error: Call to a member function connection() on null in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1570
+Stack trace:
+#0 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1536): Illuminate\Database\Eloquent\Model::resolveConnection(NULL)
+#1 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1342): Illuminate\Database\Eloquent\Model->getConnection()
+#2 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1259): Illuminate\Database\Eloquent\Model->newBaseQueryBuilder()
+#3 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1295): Illuminate\Database\Eloquent\Model->newModelQuery()
+#4 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1248): Illuminate\Database\Eloquent\Model->newQueryWithoutScope in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 1570
+[24-Aug-2021 13:44:37 UTC] PHP Fatal error:  Uncaught Error: Call to a member function connection() on null in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1570
+Stack trace:
+#0 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1536): Illuminate\Database\Eloquent\Model::resolveConnection(NULL)
+#1 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1342): Illuminate\Database\Eloquent\Model->getConnection()
+#2 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1259): Illuminate\Database\Eloquent\Model->newBaseQueryBuilder()
+#3 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1295): Illuminate\Database\Eloquent\Model->newModelQuery()
+#4 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1248): Illuminate\Database\Eloquent\Model->newQueryWithoutScope in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 1570
+[24-Aug-2021 13:44:37 UTC] PHP Fatal error:  Uncaught Error: Call to a member function connection() on null in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1570
+Stack trace:
+#0 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1536): Illuminate\Database\Eloquent\Model::resolveConnection(NULL)
+#1 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1342): Illuminate\Database\Eloquent\Model->getConnection()
+#2 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1259): Illuminate\Database\Eloquent\Model->newBaseQueryBuilder()
+#3 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1295): Illuminate\Database\Eloquent\Model->newModelQuery()
+#4 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1248): Illuminate\Database\Eloquent\Model->newQueryWithoutScope in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 1570
+[17-Sep-2021 06:01:46 America/Boise] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[20-Sep-2021 11:20:13 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'orderpak_stage.categories' doesn't exist in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Connection.php:352
+Stack trace:
+#0 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Connection.php(352): PDO->prepare('select * from `...')
+#1 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Connection.php(685): Illuminate\Database\Connection->Illuminate\Database\{closure}('select * from `...', Array)
+#2 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Connection.php(652): Illuminate\Database\Connection->runQueryCallback('select * from `...', Array, Object(Closure))
+#3 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Connection.php(360): Illuminate\Database\Connection->run('select * from `...', Array, Object(Closure))
+#4 /home3/orderpak/public_html/stage/vendor/laravel/ in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 692
+[20-Sep-2021 11:20:13 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'orderpak_stage.categories' doesn't exist in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Connection.php:352
+Stack trace:
+#0 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Connection.php(352): PDO->prepare('select * from `...')
+#1 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Connection.php(685): Illuminate\Database\Connection->Illuminate\Database\{closure}('select * from `...', Array)
+#2 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Connection.php(652): Illuminate\Database\Connection->runQueryCallback('select * from `...', Array, Object(Closure))
+#3 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Connection.php(360): Illuminate\Database\Connection->run('select * from `...', Array, Object(Closure))
+#4 /home3/orderpak/public_html/stage/vendor/laravel/ in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 692
+[20-Sep-2021 11:20:16 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'orderpak_stage.categories' doesn't exist in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Connection.php:352
+Stack trace:
+#0 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Connection.php(352): PDO->prepare('select * from `...')
+#1 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Connection.php(685): Illuminate\Database\Connection->Illuminate\Database\{closure}('select * from `...', Array)
+#2 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Connection.php(652): Illuminate\Database\Connection->runQueryCallback('select * from `...', Array, Object(Closure))
+#3 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Connection.php(360): Illuminate\Database\Connection->run('select * from `...', Array, Object(Closure))
+#4 /home3/orderpak/public_html/stage/vendor/laravel/ in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 692
+[20-Sep-2021 11:20:17 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'orderpak_stage.categories' doesn't exist in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Connection.php:352
+Stack trace:
+#0 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Connection.php(352): PDO->prepare('select * from `...')
+#1 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Connection.php(685): Illuminate\Database\Connection->Illuminate\Database\{closure}('select * from `...', Array)
+#2 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Connection.php(652): Illuminate\Database\Connection->runQueryCallback('select * from `...', Array, Object(Closure))
+#3 /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Connection.php(360): Illuminate\Database\Connection->run('select * from `...', Array, Object(Closure))
+#4 /home3/orderpak/public_html/stage/vendor/laravel/ in /home3/orderpak/public_html/stage/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 692
+[20-Oct-2021 06:42:12 America/Boise] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[27-Oct-2021 02:07:17 America/Boise] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[27-Oct-2021 02:09:32 America/Boise] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[27-Oct-2021 02:10:44 America/Boise] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[27-Oct-2021 02:11:38 America/Boise] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[27-Oct-2021 02:12:07 America/Boise] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[27-Oct-2021 02:13:02 America/Boise] PHP Warning:  Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[11-Nov-2021 07:43:25 UTC] PHP Fatal error:  Out of memory (allocated 694185984) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[12-Nov-2021 18:15:03 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 694185984) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[30-Nov-2021 18:25:37 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 694255616) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[01-Dec-2021 11:17:23 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 421527552) (tried to allocate 400560128 bytes) in /home3/orderpak/public_html/dev/app/Http/Controllers/Admin/DashboardController.php on line 256
+[01-Dec-2021 11:18:08 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 421527552) (tried to allocate 400560128 bytes) in /home3/orderpak/public_html/dev/app/Http/Controllers/Admin/DashboardController.php on line 256
+[17-Jan-2022 15:59:42 Asia/Karachi] PHP Fatal error:  Trait 'App\Http\Controllers\Vendor\SitemapTrait' not found in /home3/orderpak/public_html/dev/app/Http/Controllers/Vendor/VendorPayoutController.php on line 11
+[18-Jan-2022 11:04:08 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 694255616) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[26-Jan-2022 14:38:17 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 694255616) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[26-Jan-2022 14:38:41 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 694255616) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[28-Jan-2022 13:05:47 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 694259712) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[28-Jan-2022 13:05:51 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 702648320) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[28-Jan-2022 13:05:51 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 702648320) (tried to allocate 581632 bytes) in /home3/orderpak/public_html/dev/vendor/symfony/http-foundation/Response.php on line 1235
+[28-Jan-2022 13:06:13 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 694259712) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[28-Jan-2022 13:13:20 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 694259712) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[28-Jan-2022 16:29:32 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 694259712) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[28-Jan-2022 16:31:30 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 694259712) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[28-Jan-2022 16:34:22 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[28-Jan-2022 16:37:24 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[28-Jan-2022 16:37:50 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[28-Jan-2022 16:37:58 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[28-Jan-2022 16:38:37 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[28-Jan-2022 16:38:47 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[28-Jan-2022 16:39:34 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 702648320) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[28-Jan-2022 16:39:34 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 702648320) (tried to allocate 581632 bytes) in /home3/orderpak/public_html/dev/vendor/symfony/http-foundation/Response.php on line 1235
+[28-Jan-2022 16:39:50 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 702988288) (tried to allocate 1802240 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[28-Jan-2022 16:39:50 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 702988288) (tried to allocate 569344 bytes) in /home3/orderpak/public_html/dev/vendor/facade/ignition/resources/views/errorPage.php on line 51
+[28-Jan-2022 16:40:00 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[28-Jan-2022 16:40:43 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 702648320) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[28-Jan-2022 16:40:43 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 702648320) (tried to allocate 581632 bytes) in /home3/orderpak/public_html/dev/vendor/symfony/http-foundation/Response.php on line 1235
+[28-Jan-2022 16:52:07 Asia/Karachi] PHP Fatal error:  Cannot use Auth as Auth because the name is already in use in /home3/orderpak/public_html/dev/app/Http/Controllers/AddCartController.php on line 15
+[28-Jan-2022 17:42:58 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[28-Jan-2022 17:48:09 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[28-Jan-2022 17:48:12 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[28-Jan-2022 17:50:51 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[28-Jan-2022 17:59:26 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 702648320) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[28-Jan-2022 17:59:40 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 11:31:00 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 702648320) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 11:31:10 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 11:31:40 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 11:31:48 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 11:32:01 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 694259712) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 11:32:37 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 694259712) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 11:36:03 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 696356864) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 11:37:22 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 696356864) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 11:38:24 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 11:38:41 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 694259712) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 11:40:04 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 694259712) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 11:41:04 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 694259712) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 11:41:06 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 11:44:30 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 11:45:58 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 11:47:00 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 11:47:09 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 11:48:35 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 702648320) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 11:48:35 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 702648320) (tried to allocate 581632 bytes) in /home3/orderpak/public_html/dev/vendor/symfony/http-foundation/Response.php on line 1235
+[31-Jan-2022 11:48:44 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 11:48:48 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 702648320) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 11:48:48 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 702648320) (tried to allocate 581632 bytes) in /home3/orderpak/public_html/dev/vendor/symfony/http-foundation/Response.php on line 1235
+[31-Jan-2022 11:49:01 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 11:49:20 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 702648320) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 11:54:05 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 12:07:19 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 12:08:11 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 12:24:23 Asia/Karachi] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 9080632 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 12:24:23 Asia/Karachi] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 524288 bytes) in /home3/orderpak/public_html/dev/vendor/facade/ignition/src/ErrorPage/ErrorPageViewModel.php on line 151
+[31-Jan-2022 12:24:35 Asia/Karachi] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 9080632 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 12:24:35 Asia/Karachi] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 581632 bytes) in /home3/orderpak/public_html/dev/vendor/symfony/http-foundation/Response.php on line 1235
+[31-Jan-2022 12:24:42 Asia/Karachi] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 9080632 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 12:24:42 Asia/Karachi] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 569344 bytes) in /home3/orderpak/public_html/dev/vendor/facade/ignition/resources/views/errorPage.php on line 51
+[31-Jan-2022 12:24:50 Asia/Karachi] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 610304 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 12:24:50 Asia/Karachi] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 65536 bytes) in /home3/orderpak/public_html/dev/vendor/facade/flare-client-php/src/Report.php on line 57
+[31-Jan-2022 12:25:09 Asia/Karachi] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 9080632 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 12:25:09 Asia/Karachi] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 581632 bytes) in /home3/orderpak/public_html/dev/vendor/symfony/http-foundation/Response.php on line 1235
+[31-Jan-2022 12:25:15 Asia/Karachi] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 9080632 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 12:25:15 Asia/Karachi] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 569344 bytes) in /home3/orderpak/public_html/dev/vendor/facade/ignition/resources/views/errorPage.php on line 51
+[31-Jan-2022 12:25:20 Asia/Karachi] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 9080632 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 12:25:20 Asia/Karachi] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 569344 bytes) in /home3/orderpak/public_html/dev/vendor/facade/ignition/resources/views/errorPage.php on line 51
+[31-Jan-2022 12:25:35 Asia/Karachi] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 9080632 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 12:28:09 Asia/Karachi] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 9080632 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 12:28:09 Asia/Karachi] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 569344 bytes) in /home3/orderpak/public_html/dev/vendor/facade/ignition/resources/views/errorPage.php on line 51
+[31-Jan-2022 12:31:35 Asia/Karachi] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 9080632 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 12:31:35 Asia/Karachi] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 569344 bytes) in /home3/orderpak/public_html/dev/vendor/facade/ignition/resources/views/errorPage.php on line 51
+[31-Jan-2022 12:36:11 Asia/Karachi] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 9080632 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 12:36:11 Asia/Karachi] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 569344 bytes) in /home3/orderpak/public_html/dev/vendor/facade/ignition/resources/views/errorPage.php on line 51
+[31-Jan-2022 12:43:36 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 12:44:38 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 12:45:34 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359
+[31-Jan-2022 13:01:14 Asia/Karachi] PHP Fatal error:  Out of memory (allocated 700551168) (tried to allocate 12892432 bytes) in /home3/orderpak/public_html/dev/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 359

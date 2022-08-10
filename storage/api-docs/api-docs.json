@@ -1,0 +1,4497 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Orderpak OpenApi",
+        "description": "Orderpak L5 Swagger OpenApi",
+        "contact": {
+            "email": "admin@admin.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/user/login/": {
+            "post": {
+                "tags": [
+                    "Customer"
+                ],
+                "summary": "Login",
+                "operationId": "login",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "user1@mail.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "PassWord12345"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/user/create/": {
+            "post": {
+                "tags": [
+                    "Customer"
+                ],
+                "summary": "Register",
+                "operationId": "register",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/StoreCustomerRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/user/logout/": {
+            "post": {
+                "tags": [
+                    "Customer"
+                ],
+                "summary": "Logout",
+                "operationId": "customer_logout",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/user/forgot-password/": {
+            "post": {
+                "tags": [
+                    "Customer"
+                ],
+                "summary": "Forgot Password",
+                "operationId": "customer_forgot_password",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "user1@mail.com"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong email address or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/user/reset-password/": {
+            "post": {
+                "tags": [
+                    "Customer"
+                ],
+                "summary": "Reset Password",
+                "operationId": "cusomer_reset_password",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "password",
+                                    "password_confirmation"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "user1@mail.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "PassWord12345"
+                                    },
+                                    "password_confirmation": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "PassWord12345"
+                                    },
+                                    "token": {
+                                        "type": "string",
+                                        "example": "fdasfde3432dsfsfdsfgs"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong email address or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/user/": {
+            "get": {
+                "tags": [
+                    "Customer"
+                ],
+                "summary": "Get list of customers",
+                "description": "Returns list of users",
+                "operationId": "getUserList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/user/change-password/":{
+            "post": {
+                "description": "change Password",
+                "summary": "change password",
+                "tags": [
+                   "Customer"
+                ],
+                "requestBody": {
+                   "required": true,
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "$ref": "#/components/schemas/PasswordChange"
+                         }
+                      }
+                   }
+                },
+                "responses":{
+                    "200":{
+                        "description":"Successfully changed password"
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/user/me/": {
+            "get": {
+                "tags": [
+                    "Customer"
+                ],
+                "summary": "Gets the User profile",
+                "description": "Gets the User profile for currently authorized user",
+                "operationId": "getUserProfile",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "description": "Update existing Profile",
+                "summary":"Edit Profile",
+                "tags": [
+                   "Customer"
+                ],
+                "requestBody": {
+                   "required": true,
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "$ref": "#/components/schemas/UserProfile"
+                         }
+                      }
+                   }
+                },
+                "responses":{
+                    "200":{
+                        "description":"Successfully Edited"
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/user/wishlist/": {
+            "get": {
+                "tags": [
+                    "Customer"
+                ],
+                "summary": "wishlist get",
+                "description": "wishlist",
+                "operationId": "getWishList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/user/wishlist/{productId}/":{
+            "get":{
+                "description":"wishlist add",
+                "summary":"wishlist add",
+                "tags":[
+                    "Customer"
+                ],
+                "parameters":[
+                    {
+                        "required":true,
+                        "in":"path",
+                        "name":"productId",
+                        "description":"Enter Product id",
+                        "schema":{
+                            "type":"string",
+                            "example": "2"
+                        }
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Product added to wishlist"
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+
+            },
+            "delete":{
+                "description":"wishlist add",
+                "summary":"wishlist add",
+                "tags":[
+                    "Customer"
+                ],
+                "parameters":[
+                    {
+                        "required":true,
+                        "in":"path",
+                        "name":"productId",
+                        "description":"Enter Product id",
+                        "schema":{
+                            "type":"string",
+                            "example": "2"
+                        }
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Product removed from wishlist"
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+
+            }
+        },
+        "/api/user/order-history/":{
+            "get":{
+                "tags": [
+                    "Customer"
+                ],
+                "summary": "Get list of Orders",
+                "description": "Returns list of Orders of of logged in Customers as per status",
+                "parameters": [
+                    {
+                        "name": "paginate",
+                        "in": "query",
+                        "description": "Page size",
+                        "schema": {
+                           "minimum": 1,
+                           "example": 15,
+                           "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Sort filter",
+                        "schema": {
+                            "$ref":"#/components/schemas/Arrangement"
+                        }
+                    },
+                    {
+                        "name": "sort_column",
+                        "in": "query",
+                        "description": "Sort by Column",
+                        "schema": {
+                            "$ref":"#/components/schemas/OrderSort"
+                        }
+                    },
+                    {
+                        "name": "filter_status",
+                        "in": "query",
+                        "description": "Filter by Order Status",
+                        "schema": {
+                            "$ref":"#/components/schemas/CustomerOrderStatusFilter"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "description": "Search Filter",
+                        "schema": {
+                            "type": "string",
+                            "example":""
+                        }
+                    }
+                 ],
+                "responses": {
+                    "200": {
+                        "description": "Successful retreival"
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+
+            }
+        },
+        "/api/user/order-history/{orderid}/":{
+            "get":{
+                "description":"Get Order detail by order id",
+                "summary":"Get Order detail by order id",
+                "tags":[
+                    "Customer"
+                ],
+                "parameters":[
+                    {
+                        "required":true,
+                        "in":"path",
+                        "name":"orderid",
+                        "description":"Enter Order id",
+                        "schema":{
+                            "type":"string",
+                            "example": "2"
+                        }
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Order details retrieved successfully"
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+
+            }
+        },
+        "/api/user/contact/":{
+            "post": {
+                "description": "Contact",
+                "summary": "Contact form",
+                "tags": [
+                   "Customer"
+                ],
+                "requestBody": {
+                   "required": true,
+                   "content": {
+                      "multipart/form-data": {
+                         "schema": {
+                            "type": "object",
+                            "$ref": "#/components/schemas/Contact"
+                         }
+                      }
+                   }
+                },
+                "responses":{
+                    "200":{
+                        "description":"Message sent successfully"
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/api/user/subscribe/":{
+            "post": {
+                "description": "Subscribe",
+                "summary": "Subscribe",
+                "tags": [
+                   "Customer"
+                ],
+                "requestBody": {
+                   "required": true,
+                   "content": {
+                      "multipart/form-data": {
+                         "schema": {
+                            "type": "object",
+                            "$ref": "#/components/schemas/Subscribe"
+                         }
+                      }
+                   }
+                },
+                "responses":{
+                    "200":{
+                        "description":"Subscribed successfully"
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/api/cart/create/": {
+            "post": {
+                "tags": [
+                    "Cart"
+                ],
+                "summary": "Create Cart",
+                "description": "This method is called when new Vue Storefront shopping cart is created. First visit, page refresh, after user-authorization",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Auth token",
+                        "schema": {
+                           "type": "string"
+                        }
+                    }
+                    
+                 ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/api/cart/payment-methods": {
+            "get": {
+                "tags": [
+                    "Cart"
+                ],
+                "summary": "Get list of methods",
+                "description": "Returns list of payment methods",
+                "operationId": "getPaymentMethodList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/api/cart/pull/": {
+            "get": {
+                "tags": [
+                    "Cart"
+                ],
+                "summary": "Fetch Cart from server",
+                "description": "Returns user cart",
+                "operationId": "getCart",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Auth token",
+                        "schema": {
+                           "type": "string"
+                        }
+                    },
+                    {
+                        "name": "cartId",
+                        "in": "query",
+                        "description": "Cart Id",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        }
+                    }
+                    
+                 ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/api/cart/totals/": {
+            "get": {
+                "tags": [
+                    "Cart"
+                ],
+                "summary": "Fetch Cart summaryr",
+                "description": "Returns user cart",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Auth token",
+                        "schema": {
+                           "type": "string"
+                        }
+                    },
+                    {
+                        "name": "cartId",
+                        "in": "query",
+                        "description": "Cart Id",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        }
+                    }
+                    
+                 ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/api/cart/update/": {
+            "post": {
+                "tags": [
+                    "Cart"
+                ],
+                "summary": "Add / update Cart",
+                "description": "Method used to add or update shopping cart item's server side. ",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Auth token",
+                        "schema": {
+                           "type": "string"
+                        }
+                    },
+                    {
+                        "name": "cartId",
+                        "in": "query",
+                        "description": "Cart Id",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        }
+                    }
+                    
+                 ],
+                "requestBody": {
+                   "required": true,
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "$ref": "#/components/schemas/AddtoCart"
+                         }
+                      }
+                   }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/api/cart/delete/{id}/":{
+            "post":{
+                "description": "Remove cart Item",
+                "summary": "Remove item from cart",
+                "tags":[
+                    "Cart"
+                ],
+                "parameters":[
+                    {
+                        "required":true,
+                        "in":"path",
+                        "name":"id",
+                        "description":"Enter product id",
+                        "schema":{
+                            "type":"integer",
+                            "example": "2"
+                        }
+                    },
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Auth token",
+                        "schema": {
+                           "type": "string"
+                        }
+                    },
+                    {
+                        "name": "cartId",
+                        "in": "query",
+                        "description": "Cart Id",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        }
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successfully removed"
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/api/cart/shipping-methods/": {
+            "post": {
+                "tags": [
+                    "Cart"
+                ],
+                "summary": "Fetch shipping method info",
+                "description": "This method is used as a step in the cart synchronization process to get all the shipping methods with actual costs as available inside the backend CMS",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Auth token",
+                        "schema": {
+                           "type": "string"
+                        }
+                    },
+                    {
+                        "name": "cartId",
+                        "in": "query",
+                        "description": "Cart Id",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        }
+                    }
+                    
+                 ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/api/cart/apply-coupon/": {
+            "post": {
+                "tags": [
+                    "Blocked APIS"
+                ],
+                "summary": "Apply the discount code",
+                "description": "This method is used to apply the discount code to the current server side quote.",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Auth token",
+                        "schema": {
+                           "type": "string"
+                        }
+                    },
+                    {
+                        "name": "cartId",
+                        "in": "query",
+                        "description": "Cart Id",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        }
+                    },
+                    {
+                        "name": "coupon",
+                        "in": "query",
+                        "description": "Discount Coupon",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        }
+                    }
+                    
+                 ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/api/cart/delete-coupon/": {
+            "post": {
+                "tags": [
+                    "Blocked APIS"
+                ],
+                "summary": "Delete the discount code",
+                "description": "This method is used to delete the discount code to the current server side quote.",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Auth token",
+                        "schema": {
+                           "type": "string"
+                        }
+                    },
+                    {
+                        "name": "cartId",
+                        "in": "query",
+                        "description": "Cart Id",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        }
+                    }
+                    
+                 ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/api/cart/coupon/": {
+            "get": {
+                "tags": [
+                    "Blocked APIS"
+                ],
+                "summary": "get the currently applied coupon",
+                "description": "This method is used to get the currently applied coupon code",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Auth token",
+                        "schema": {
+                           "type": "string"
+                        }
+                    },
+                    {
+                        "name": "cartId",
+                        "in": "query",
+                        "description": "Cart Id",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        }
+                    }
+                    
+                 ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/api/order/create/":{
+            "post": {
+                "description": "Order Create",
+                "summary": "Order Create",
+                "tags": [
+                   "Cart"
+                ],
+                "requestBody": {
+                   "required": true,
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "$ref": "#/components/schemas/OrderFields"
+                         }
+                      }
+                   }
+                },
+                "responses":{
+                    "200":{
+                        "description":"Subscribed successfully"
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/api/stock/check/{sku}/": {
+            "get": {
+                "tags": [
+                    "Stock"
+                ],
+                "summary": "Get Stock",
+                "description": "Get Stock based on sku",
+                "parameters":[
+                    {
+                        "required":true,
+                        "in":"path",
+                        "name":"sku",
+                        "description":"Enter Product sku",
+                        "schema":{
+                            "type":"string",
+                            "example": "sma-34"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/api/elastic/product/": {
+            "get": {
+                "tags": [
+                    "Elastic Search"
+                ],
+                "summary": "Get list of products",
+                "description": "Returns list of products",
+                "operationId": "getProductList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/api/elastic/categories/": {
+            "get": {
+                "tags": [
+                    "Elastic Search"
+                ],
+                "summary": "Get list of Categories",
+                "description": "Returns list of categories",
+                "operationId": "getCategoryList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/api/elastic/attributes/": {
+            "get": {
+                "tags": [
+                    "Elastic Search"
+                ],
+                "summary": "Get list of attributes",
+                "description": "Returns list of attributes",
+                "operationId": "getattributesList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/api/v1/vendor/forgot-password/": {
+            "post": {
+                "tags": [
+                    "Vendor"
+                ],
+                "summary": "Forgot Password",
+                "operationId": "vendor_forgot_password",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "user1@mail.com"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong email address or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/vendor/login/": {
+            "post": {
+                "tags": [
+                    "Vendor"
+                ],
+                "summary": "Login",
+                "operationId": "vendor_login",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "user1@mail.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "PassWord12345"
+                                    },
+                                    "persistent": {
+                                        "type": "boolean",
+                                        "example": "true"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong email address or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/vendor/registration/": {
+            "post": {
+                "tags": [
+                    "Vendor"
+                ],
+                "summary": "Register",
+                "operationId": "vendor_register",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/StoreVendorRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/v1/vendor/reset-password/": {
+            "post": {
+                "tags": [
+                    "Vendor"
+                ],
+                "summary": "Reset Password",
+                "operationId": "vendor_reset_password",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "password",
+                                    "password_confirmation"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "user1@mail.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "PassWord12345"
+                                    },
+                                    "password_confirmation": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "PassWord12345"
+                                    },
+                                    "token": {
+                                        "type": "string",
+                                        "example": "fdasfde3432dsfsfdsfgs"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong email address or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/vendor/logout/": {
+            "post": {
+                "tags": [
+                    "Vendor"
+                ],
+                "summary": "Logout",
+                "operationId": "vendor_logout",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/product/listcolor/":{
+            "get":{
+                "tags": [
+                    "Products"
+                ],
+                "summary": "Get list of colors",
+                "description": "Returns list of colors",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "$ref":"#/components/schemas/Color"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+
+            }
+        },
+        "/api/v1/product/listcategory/":{
+            "get":{
+                "tags": [
+                    "Products"
+                ],
+                "summary": "Get list of category",
+                "description": "Returns list of category",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "$ref":"#/components/schemas/Category"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+
+            }
+        },
+        "/api/v1/product/listsubcategory/{id}":{
+            "get":{
+                "description":"Get SubCategory by id",
+                "summary":"Get SubCategory by id",
+                "tags":[
+                    "Products"
+                ],
+                "parameters":[
+                    {
+                        "required":true,
+                        "in":"path",
+                        "name":"id",
+                        "description":"Enter Categpry id",
+                        "schema":{
+                            "type":"integer",
+                            "example": "2"
+                        }
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Success",
+                        "content":{
+                            "application/json":{
+                                "schema":{
+                                    "$ref":"#/components/schemas/SubCategory"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+
+            }
+        },
+        "/api/v1/product/listchildcategory/{id}":{
+            "get":{
+                "description":"Get Child Category by id",
+                "summary":"Get Child Category by id",
+                "tags":[
+                    "Products"
+                ],
+                "parameters":[
+                    {
+                        "required":true,
+                        "in":"path",
+                        "name":"id",
+                        "description":"Enter Sub Categpry id",
+                        "schema":{
+                            "type":"integer",
+                            "example": "2"
+                        }
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Success",
+                        "content":{
+                            "application/json":{
+                                "schema":{
+                                    "$ref":"#/components/schemas/ChildCategory"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+
+            }
+        },
+        "/api/v1/product/listproduct/":{
+            "get":{
+                "tags": [
+                    "Products"
+                ],
+                "summary": "Get list of products",
+                "description": "Returns list of products",
+                "parameters": [
+                    {
+                        "name": "paginate",
+                        "in": "query",
+                        "description": "Page size",
+                        "schema": {
+                           "minimum": 1,
+                           "example": 15,
+                           "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Sort filter",
+                        "schema": {
+                            "$ref":"#/components/schemas/Arrangement"
+                        }
+                    },
+                    {
+                        "name": "sort_column",
+                        "in": "query",
+                        "description": "Sort by Column",
+                        "schema": {
+                            "$ref":"#/components/schemas/ProductSort"
+                        }
+                    },
+                    {
+                        "name": "filter_status",
+                        "in": "query",
+                        "description": "Filter by Product Status",
+                        "schema": {
+                            "$ref":"#/components/schemas/ProductStatusFilter"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "description": "Search Filter",
+                        "schema": {
+                            "type": "string",
+                            "example":"Complete"
+                        }
+                    }
+                 ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "$ref":"#/components/schemas/Products"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+
+            }
+        },
+        "/api/v1/product/viewproduct/{id}":{
+            "get":{
+                "description":"Get Product by id",
+                "summary":"Get product by id",
+                "tags":[
+                    "Products"
+                ],
+                "parameters":[
+                    {
+                        "required":true,
+                        "in":"path",
+                        "name":"id",
+                        "description":"Enter product id",
+                        "schema":{
+                            "type":"integer",
+                            "example": "2"
+                        }
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successfully deleted",
+                        "content":{
+                            "application/json":{
+                                "schema":{
+                                    "type":"object",
+                                    "$ref":"#/components/schemas/Product"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+
+            }
+        },
+        "/api/v1/product/deleteproduct/{id}/":{
+            "delete":{
+                "description": "Delete specific product",
+                "summary": "delete product by id",
+                "tags":[
+                    "Products"
+                ],
+                "parameters":[
+                    {
+                        "required":true,
+                        "in":"path",
+                        "name":"id",
+                        "description":"Enter product id",
+                        "schema":{
+                            "type":"integer",
+                            "example": "2"
+                        }
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successfully deleted"
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/product/addproduct/":{
+            "post": {
+                "description": "Create new Product",
+                "summary": "Create product",
+                "tags": [
+                   "Products"
+                ],
+                "requestBody": {
+                   "required": true,
+                   "content": {
+                      "multipart/form-data": {
+                         "schema": {
+                            "type": "object",
+                            "$ref": "#/components/schemas/Product"
+                         }
+                      }
+                   }
+                },
+                "responses":{
+                    "200":{
+                        "description":"Successfully added new product"
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/product/addimageeditor/":{
+            "post": {
+                "description": "Add new Image",
+                "summary": "Create Image",
+                "tags": [
+                   "Products"
+                ],
+                "requestBody": {
+                   "required": true,
+                   "content": {
+                      "multipart/form-data": {
+                         "schema": {
+                            "type": "object",
+                            "$ref": "#/components/schemas/Editorimage"
+                         }
+                      }
+                   }
+                },
+                "responses":{
+                    "200":{
+                        "description":"Successfully added new Image"
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/product/editproduct/{id}/":{
+            "post": {
+                "description": "Update existing Product",
+                "summary":"Edit Product",
+                "tags": [
+                   "Products"
+                ],
+                "parameters": [
+                    {
+                       "in": "path",
+                       "name": "id",
+                       "required": true,
+                       "description": "Enter Product id",
+                       "schema": {
+                          "type": "integer",
+                          "example": 250
+                       }
+                    }
+                 ],
+                "requestBody": {
+                   "required": true,
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "$ref": "#/components/schemas/Product"
+                         }
+                      }
+                   }
+                },
+                "responses":{
+                    "200":{
+                        "description":"Successfully Edited"
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/product/editproductstatus/{id}/":{
+          "post": {
+              "description": "Update existing Product status",
+              "summary":"Edit Product Status",
+              "tags": [
+                 "Products"
+              ],
+              "parameters": [
+                  {
+                     "in": "path",
+                     "name": "id",
+                     "required": true,
+                     "description": "Enter Product id",
+                     "schema": {
+                        "type": "integer",
+                        "example": 250
+                     }
+                  }
+               ],
+              "requestBody": {
+                 "required": true,
+                 "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "object",
+
+                      "properties":{
+                        "status":{
+                          "title":"status",
+                          "description":"status",
+                          "type":"string",
+                          "example":"ACTIVE"
+                      }
+                      }
+
+                    }}
+                 }
+              },
+              "responses":{
+                  "200":{
+                      "description":"Successfully Edited"
+                  },
+                  "401": {
+                      "description": "Cannot use this API without Authentication"
+                  },
+                  "403": {
+                      "description": "Forbidden"
+                  },
+                  "400": {
+                      "description": "Bad Request"
+                  },
+                  "404": {
+                      "description": "not found"
+                  }
+              },
+              "security": [
+                  {
+                      "apiAuth": []
+                  }
+              ]
+          }
+      },
+        "/api/v1/product/deleteimageeditor/{name}/":{
+            "get":{
+                "description":"delete editor image",
+                "summary":"editor image",
+                "tags":[
+                    "Products"
+                ],
+                "parameters":[
+                    {
+                        "required":true,
+                        "in":"path",
+                        "name":"name",
+                        "description":"Enter image url",
+                        "schema":{
+                            "type":"string",
+                            "example": "/product/abc.png"
+                        }
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successfully deleted"
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+
+            }
+        },
+        "/api/v1/profile/viewprofile/":{
+            "get":{
+                "description":"Get Vendor profile",
+                "summary":"Get vendor profile",
+                "tags":[
+                    "Vendor Profile"
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Shop details retrieved successfully",
+                        "content":{
+                            "application/json":{
+                                "schema":{
+                                    "type":"object",
+                                    "$ref":"#/components/schemas/VendorProfile"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+
+            }
+        },
+        "/api/v1/profile/editprofile/":{
+            "put": {
+                "description": "Update existing Profile",
+                "summary":"Edit Profile",
+                "tags": [
+                   "Vendor Profile"
+                ],
+                "requestBody": {
+                   "required": true,
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "$ref": "#/components/schemas/VendorProfile"
+                         }
+                      }
+                   }
+                },
+                "responses":{
+                    "200":{
+                        "description":"Successfully Edited"
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/profile/editshop/":{
+            "post": {
+                "description": "Update existing Shop Info",
+                "summary":"Update Shop",
+                "tags": [
+                   "Vendor Profile"
+                ],
+                "requestBody": {
+                   "required": true,
+                   "content": {
+                      "multipart/form-data": {
+                         "schema": {
+                            "type": "object",
+                            "$ref": "#/components/schemas/Shop"
+                         }
+                      }
+                   }
+                },
+                "responses":{
+                    "200":{
+                        "description":"Successfully Edited"
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/profile/viewshop/":{
+            "get":{
+                "description":"Get vendor Shop",
+                "summary":"Get vendor Shop",
+                "tags":[
+                    "Vendor Profile"
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Shop details retrieved successfully",
+                        "content":{
+                            "application/json":{
+                                "schema":{
+                                    "type":"object",
+                                    "$ref":"#/components/schemas/Shop"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+
+            }
+        },
+        "/api/v1/profile/changePassword/":{
+            "post": {
+                "description": "change Password",
+                "summary": "change password",
+                "tags": [
+                   "Vendor Profile"
+                ],
+                "requestBody": {
+                   "required": true,
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "$ref": "#/components/schemas/PasswordChange"
+                         }
+                      }
+                   }
+                },
+                "responses":{
+                    "200":{
+                        "description":"Successfully changed password"
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/commission/listcommission/":{
+            "get":{
+                "tags": [
+                    "Commission"
+                ],
+                "summary": "Get list of commission",
+                "description": "Returns list of commission",
+                "parameters": [
+                    {
+                        "name": "paginate",
+                        "in": "query",
+                        "description": "Page size",
+                        "schema": {
+                           "minimum": 1,
+                           "example": 15,
+                           "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Sort filter",
+                        "schema": {
+                            "$ref":"#/components/schemas/Arrangement"
+                        }
+                    },
+                    {
+                        "name": "sort_column",
+                        "in": "query",
+                        "description": "Sort Column",
+                        "schema": {
+                            "$ref":"#/components/schemas/CommissionSort"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "description": "Search Filter",
+                        "schema": {
+                            "type": "string",
+                            "example":"Automotive"
+                        }
+                    }
+                 ],
+                "responses": {
+                    "200": {
+                        "description": "Successful retreival",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "$ref":"#/components/schemas/Commissions"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+
+            }
+        },
+        "/api/v1/orders/listorders/":{
+            "get":{
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Get list of Orders",
+                "description": "Returns list of Orders of Loggedin Vendor",
+                "parameters": [
+                    {
+                        "name": "paginate",
+                        "in": "query",
+                        "description": "Page size",
+                        "schema": {
+                           "minimum": 1,
+                           "example": 15,
+                           "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Sort filter",
+                        "schema": {
+                            "$ref":"#/components/schemas/Arrangement"
+                        }
+                    },
+                    {
+                        "name": "sort_column",
+                        "in": "query",
+                        "description": "Sort by Column",
+                        "schema": {
+                            "$ref":"#/components/schemas/OrderSort"
+                        }
+                    },
+                    {
+                        "name": "filter_status",
+                        "in": "query",
+                        "description": "Filter by Order Status",
+                        "schema": {
+                            "$ref":"#/components/schemas/OrderStatusFilter"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "description": "Search Filter",
+                        "schema": {
+                            "type": "string",
+                            "example":"Complete"
+                        }
+                    }
+                 ],
+                "responses": {
+                    "200": {
+                        "description": "Successful retreival",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "$ref":"#/components/schemas/Orders"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+
+            }
+        },
+        "/api/v1/orders/vieworder/{orderid}":{
+            "get":{
+                "description":"Get Order detail by order id",
+                "summary":"Get Order detail by order id",
+                "tags":[
+                    "Orders"
+                ],
+                "parameters":[
+                    {
+                        "required":true,
+                        "in":"path",
+                        "name":"orderid",
+                        "description":"Enter Order id",
+                        "schema":{
+                            "type":"string",
+                            "example": "2"
+                        }
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Order details retrieved successfully"
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+
+            }
+        },
+        "/api/v1/orders/viewinvoice/{orderid}":{
+            "get":{
+                "description":"Get Order detail by order id",
+                "summary":"Get Order detail by order id",
+                "tags":[
+                    "Orders"
+                ],
+                "parameters":[
+                    {
+                        "required":true,
+                        "in":"path",
+                        "name":"orderid",
+                        "description":"Enter Order id",
+                        "schema":{
+                            "type":"string",
+                            "example": "2"
+                        }
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Order details retrieved successfully"
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+
+            }
+        },
+        "/api/v1/orders/changestatus/{orderid}/":{
+            "post": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Chnage status to complete provided order id",
+                "parameters":[
+                    {
+                        "required":true,
+                        "in":"path",
+                        "name":"orderid",
+                        "description":"Enter Order id",
+                        "schema":{
+                            "type":"string",
+                            "example": "2"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/bankinfo/bankinfo/":{
+            "get":{
+                "tags": [
+                    "Bank Info"
+                ],
+                "summary": "Get list of Banks",
+                "description": "Returns list of Bank Information",
+                "responses": {
+                    "200": {
+                        "description": "Successful retreival",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "$ref":"#/components/schemas/BankInfoList"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+
+            },
+            "post": {
+                "description": "Create new BankInfo",
+                "summary": "Create BankInfo",
+                "tags": [
+                   "Bank Info"
+                ],
+                "requestBody": {
+                   "required": true,
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "$ref": "#/components/schemas/BankInfo"
+                         }
+                      }
+                   }
+                },
+                "responses":{
+                    "200":{
+                        "description":"Successfully added new product"
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/bankinfo/bankinfo/{id}/":{
+            "delete":{
+                "description": "Delete specific Bank Info",
+                "summary": "delete BankInfo by id",
+                "tags":[
+                    "Bank Info"
+                ],
+                "parameters":[
+                    {
+                        "required":true,
+                        "in":"path",
+                        "name":"id",
+                        "description":"Enter BankInfo id",
+                        "schema":{
+                            "type":"integer",
+                            "example": "2"
+                        }
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successfully deleted"
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "description": "Update existing BankInfo",
+                "summary":"Edit BankInfo",
+                "tags": [
+                   "Bank Info"
+                ],
+                "parameters": [
+                    {
+                       "in": "path",
+                       "name": "id",
+                       "required": true,
+                       "description": "Enter BankInfo id",
+                       "schema": {
+                          "type": "integer",
+                          "example": 250
+                       }
+                    }
+                 ],
+                "requestBody": {
+                   "required": true,
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "$ref": "#/components/schemas/BankInfo"
+                         }
+                      }
+                   }
+                },
+                "responses":{
+                    "200":{
+                        "description":"Successfully Edited"
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/bankinfo/request_otp/":{
+          "get":{
+              "tags": [
+                  "Bank Info"
+              ],
+              "summary": "Request OTP code",
+              "responses": {
+                  "200": {
+                      "description": "Successful request to otp",
+                      "content": {
+                        "application/json": {
+                            "schema":{
+                                "$ref":"#/components/schemas/Otp"
+                            }
+                        }
+                    }
+                  },
+                  "401": {
+                      "description": "Cannot use this API without Authentication"
+                  },
+                  "403": {
+                      "description": "Forbidden"
+                  },
+                  "400": {
+                      "description": "Bad Request"
+                  },
+                  "404": {
+                      "description": "not found"
+                  }
+              },
+              "security": [
+                  {
+                      "apiAuth": []
+                  }
+              ]
+            }
+          },
+
+          "/api/v1/bankinfo/verify_otp/":{
+            "post":{
+                "tags": [
+                    "Bank Info"
+                ],
+                "summary": "Verify OTP code",
+
+                "requestBody": {
+                  "required": true,
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "type": "object",
+                           "$ref": "#/components/schemas/Otp"
+                        }
+                     }
+                  }
+               },
+                "responses": {
+                    "200": {
+                        "description": "Successful verify otp code"
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+              }
+            },
+        "/api/v1/wallet/walletlist/":{
+            "get":{
+                "tags": [
+                    "Wallet"
+                ],
+                "summary": "Get list of Wallet",
+                "description": "Returns list of wallet",
+                "parameters": [
+                    {
+                        "name": "paginate",
+                        "in": "query",
+                        "description": "Page size",
+                        "schema": {
+                           "minimum": 1,
+                           "example": 15,
+                           "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Sort filter",
+                        "schema": {
+                            "$ref":"#/components/schemas/Arrangement"
+                        }
+                    },
+                    {
+                        "name": "sort_column",
+                        "in": "query",
+                        "description": "Sort Column",
+                        "schema": {
+                            "$ref":"#/components/schemas/WalletSort"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "description": "Search Filter",
+                        "schema": {
+                            "type": "string",
+                            "example":"Bank"
+                        }
+                    }
+                 ],
+                "responses": {
+                    "200": {
+                        "description": "Successful retreival",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "$ref":"#/components/schemas/Wallet"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+
+            }
+        },
+        "/api/v1/dashboard/dashboard/":{
+            "get":{
+                "tags": [
+                    "Dashboard"
+                ],
+                "summary": "Get list of Dashboard Cards",
+                "description": "Returns list of Dashboard Cards",
+                "responses": {
+                    "200": {
+                        "description": "Successful retreival"
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+
+            }
+        },
+        "/api/v1/product/bestselling/":{
+            "get":{
+                "tags": [
+                    "Products"
+                ],
+                "summary": "Get list of best selling products",
+                "description": "Returns list of best selling products",
+                "parameters": [
+                    {
+                        "name": "paginate",
+                        "in": "query",
+                        "description": "Page size",
+                        "schema": {
+                           "minimum": 1,
+                           "example": 15,
+                           "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Sort filter",
+                        "schema": {
+                            "$ref":"#/components/schemas/Arrangement"
+                        }
+                    },
+                    {
+                        "name": "sort_column",
+                        "in": "query",
+                        "description": "Sort by Column",
+                        "schema": {
+                            "$ref":"#/components/schemas/ProductSortBestSelling"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "description": "Search Filter",
+                        "schema": {
+                            "type": "string",
+                            "example":"Title"
+                        }
+                    }
+                 ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "$ref":"#/components/schemas/Products"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Cannot use this API without Authentication"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Products":{
+                "title":"Products",
+                "description":"Products Array",
+                "required": [
+                    "vendor_id",
+                    "product_sku",
+                    "search_sku",
+                    "category_id",
+                    "parent_id",
+                    "brand_id",
+                    "title",
+                    "slug",
+                    "short_description",
+                    "product_description",
+                    "price",
+                    "quantity",
+                    "images"
+                ],
+                "type":"array",
+                "items":{
+                    "$ref":"#/components/schemas/Product"
+                }
+            },
+            "Product":{
+                "title":"Product",
+                "description":"Product Model",
+                "properties":{
+                    "product_sku":{
+                        "title":"product sku",
+                        "description":"product sku",
+                        "type":"string",
+                        "example":"fib-24"
+                    },
+                    "search_sku":{
+                        "title":"search sku",
+                        "description":"search sku",
+                        "type":"string",
+                        "example":"43-14-fib-24"
+                    },
+                    "category_id":{
+                        "title":"Category Id",
+                        "description":"Category Id",
+                        "type":"integer",
+                        "format":"int64",
+                        "example":1
+                    },
+                    "parent_id":{
+                        "title":"Parent Id",
+                        "description":"Parent Id",
+                        "type":"integer",
+                        "format":"int64",
+                        "example":1
+                    },
+                    "child_id":{
+                        "title":"Child Id",
+                        "description":"Child Id",
+                        "type":"integer",
+                        "format":"int64",
+                        "example":1
+                    },
+                    "brand_id":{
+                        "title":"Brand Id",
+                        "description":"Brand Id",
+                        "type":"string",
+                        "example":"Galaxy"
+                    },
+                    "title":{
+                        "title":"Title",
+                        "description":"Title",
+                        "type":"string",
+                        "example":"Box Frame"
+                    },
+                    "slug":{
+                        "title":"Slug",
+                        "description":"Slug",
+                        "type":"string",
+                        "example":"ayat-ul-kursi-wall-decor-"
+                    },
+                    "model":{
+                        "title":"model",
+                        "description":"model",
+                        "type":"string",
+                        "example":"Z.S-01"
+                    },
+                    "short_description":{
+                        "title":"Short description",
+                        "description":"Short description",
+                        "type":"string",
+                        "example":"New Collection Z.Shahjahan"
+                    },
+                    "product_description":{
+                        "title":"Product description",
+                        "description":"Product description",
+                        "type":"string",
+                        "example":"New Collection Z.Shahjahan"
+                    },
+                    "tagss":{
+                        "title":"Tags",
+                        "description":"Tags",
+                        "type":"string",
+                        "example":"['Z.SHAHJAHAN   ','    Women Fashion  ','     3 pcs Suit']"
+                    },
+                    "images":{
+                        "title":"Image",
+                        "description":"First Image",
+                        "type":"array",
+                        "items": {
+                            "type": "string",
+                            "format": "binary",
+                            "example":"abc.png"
+                        }
+                    },
+                    "color_check":{
+                        "title":"Color Check",
+                        "description":"Color Check",
+                        "type":"integer",
+                        "example":0
+                    },
+                    "colors":{
+                        "title":"Colors",
+                        "description":"Colors",
+                        "type":"string",
+                        "example":"['black']"
+                    },
+                    "condition":{
+                        "title":"condition",
+                        "description":"condition",
+                        "type":"string",
+                        "example":"New"
+                    },
+                    "sizechart": {
+                        "title": "Size Chart",
+                        "description": "Size Chart",
+                        "type": "string",
+                        "format": "binary",
+                        "example": "abc.png"
+                    },
+                    "size_check":{
+                        "title":"Size check",
+                        "description":"Size check",
+                        "type":"integer",
+                        "example":0
+                    },
+                    "size_name":{
+                        "title":"Size name",
+                        "description":"Size name array",
+                        "type":"string",
+                        "example":"['Y9 PRIME 2019']"
+                    },
+                    "size_qty":{
+                        "title":"Size quantity",
+                        "description":"Size quantity",
+                        "type":"string",
+                        "example":""
+                    },
+                    "price":{
+                        "title":"price",
+                        "description":"price",
+                        "type":"integer",
+                        "format":"int64",
+                        "example":500
+                    },
+                    "sale_status":{
+                        "title":"Sale status",
+                        "description":"Sale status",
+                        "type":"integer",
+                        "format":"int64",
+                        "example":1
+                    },
+                    "sale_price":{
+                        "title":"Sale price",
+                        "description":"Sale price",
+                        "type":"integer",
+                        "format":"int64",
+                        "example":50
+                    },
+                    "sale_details":{
+                        "title":"Sale price",
+                        "description":"Sale price",
+                        "type":"string",
+                        "example":"03/01/2021 - 06/30/2021"
+                    },
+                    "quantity":{
+                        "title":"Quantity",
+                        "description":"Quantity",
+                        "type":"integer",
+                        "format":"int64",
+                        "example":50
+                    },
+                    "additional_details":{
+                        "title":"Additional detail",
+                        "description":"Additional detail",
+                        "type":"string",
+                        "example":"Easy to wear"
+                    },
+                    "warrenty_type":{
+                        "title":"Warrenty type",
+                        "description":"Warrenty type",
+                        "type":"string",
+                        "example":"Seller Warranty"
+                    },
+                    "warrenty_period":{
+                        "title":"Warrenty Period",
+                        "description":"Warrenty Period",
+                        "type":"string",
+                        "example":"6 Months"
+                    },
+                    "warrenty_policy":{
+                        "title":"Warrenty Policy",
+                        "description":"Warrenty Policy",
+                        "type":"string",
+                        "example":"Doloribus blanditiis"
+                    },
+                    "vendor_status":{
+                        "title":"Vendor Status",
+                        "description":"Vendor Status",
+                        "type":"string",
+                        "example":"ACTIVE"
+                    },
+                    "variation":{
+                      "title":"variation",
+                      "description":"variation",
+
+                        "properties":{
+                        "color":{
+                          "title":"color",
+                          "type":"array",
+                          "items":{
+                            "properties":{
+
+                              "color_image":{
+                                "title":"color_image",
+                                "type": "string",
+                                "format": "binary",
+                                "example":"abc.png"
+                              },
+                              "name":{
+                                "title":"name",
+                                "type": "string",
+                                "example":"Orange"
+                              },
+                              "size":{
+                                "title":"size",
+                                "type":"array",
+                                "items": {
+
+                                  "title":"size",
+                                  "type": "string",
+                                  "example":"l"
+
+                                  }
+                                }
+                              }
+                            }
+                            }
+                          }
+
+                      }
+
+                }
+            },
+            "Editorimage":{
+                "title":"Product",
+                "description":"Product Model",
+                "properties":{
+                    "editor_image": {
+                        "title": "Editor Image",
+                        "description": "Editor Image",
+                        "type": "string",
+                        "format": "binary",
+                        "example": "abc.png"
+                    }
+                }
+            },
+            "ProductSort": {
+                "type": "string",
+                "enum": [
+                   "id",
+                   "title",
+                   "product_sku",
+                   "price",
+                   "admin_status",
+                   "vendor_status"
+                ]
+            },
+            "ProductSortBestSelling": {
+                "type": "string",
+                "enum": [
+                   "id",
+                   "title",
+                   "product_sku",
+                   "price"
+                ]
+            },
+            "ProductStatusFilter":{
+                "type": "string",
+                "enum": [
+                   "APPROVED",
+                   "PENDING",
+                   "REJECTED"
+                ]
+            },
+            "User": {
+                "title": "User",
+                "description": "User model",
+                "properties": {
+                    "id": {
+                        "title": "ID",
+                        "description": "ID",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1
+                    },
+                    "fullname": {
+                        "title": "Full Name",
+                        "description": "Full Name",
+                        "type": "string",
+                        "example": "John Kendy"
+                    },
+                    "email": {
+                        "title": "Customer Email",
+                        "description": "Customer Email",
+                        "type": "string",
+                        "format": "email",
+                        "pattern": "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).+$",
+                        "example": "john@yahoo.com"
+                    },
+                    "phone": {
+                        "title": "Phone Number",
+                        "description": "Phone Number",
+                        "type": "string",
+                        "example": "+923453289764"
+                    },
+                    "password": {
+                        "title": "Password",
+                        "description": "Password",
+                        "type": "string",
+                        "example": "123456"
+                    },
+                    "password_confirmation": {
+                        "title": "Confirm Password",
+                        "description": "Confirm Password",
+                        "type": "string",
+                        "example": "123456"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "User"
+                }
+            },
+            "Vendor": {
+                "title": "Vendor",
+                "description": "Vendor model",
+                "properties": {
+                    "id": {
+                        "title": "ID",
+                        "description": "ID",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1
+                    },
+                    "first_name": {
+                        "title": "First Name",
+                        "description": "First Name",
+                        "type": "string",
+                        "example": "John"
+                    },
+                    "last_name": {
+                        "title": "Last Name",
+                        "description": "Last Name",
+                        "type": "string",
+                        "example": "Mike"
+                    },
+                    "phone_no": {
+                        "title": "Phone Number",
+                        "description": "Phone Number",
+                        "type": "string",
+                        "example": "+923453289764"
+                    },
+                    "alternate_phone_no": {
+                        "title": "Alternate Phone Number",
+                        "description": "Alternate Phone Number",
+                        "type": "string",
+                        "example": "+923453289764"
+                    },
+                    "password": {
+                        "title": "Password",
+                        "description": "Password",
+                        "type": "string",
+                        "example": "123456"
+                    },
+                    "password_confirmation": {
+                        "title": "Confirm Password",
+                        "description": "Confirm Password",
+                        "type": "string",
+                        "example": "123456"
+                    },
+                    "business_name": {
+                        "title": "Business Name",
+                        "description": "Business Name",
+                        "type": "integer",
+                        "example": "Abc Company Inc"
+                    },
+                    "business_email": {
+                        "title": "Business Email",
+                        "description": "Business Email",
+                        "type": "string",
+                        "format": "email",
+                        "pattern": "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).+$",
+                        "example": "john@yahoo.com"
+                    },
+                    "business_address": {
+                        "title": "Business Address",
+                        "description": "Business Address",
+                        "type": "string",
+                        "example": "Abc Street 4"
+                    },
+                    "city": {
+                        "title": "City",
+                        "description": "City",
+                        "type": "string",
+                        "example": "Karachi"
+                    },
+                    "state": {
+                        "title": "State",
+                        "description": "State",
+                        "type": "string",
+                        "example": "Sindh"
+                    },
+                    "cnic": {
+                        "title": "Nic Number",
+                        "description": "Nic Number",
+                        "type": "string",
+                        "example": "42101-4765337-9"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "Vendor"
+                }
+            },
+            "VendorProfile": {
+                "title": "Vendor Profile",
+                "description": "Vendor Profile model",
+                "properties": {
+
+                    "first_name": {
+                        "title": "First Name",
+                        "description": "First Name",
+                        "type": "string",
+                        "example": "John"
+                    },
+                    "last_name": {
+                        "title": "Last Name",
+                        "description": "Last Name",
+                        "type": "string",
+                        "example": "Mike"
+                    },
+
+                    "business_name": {
+                        "title": "Business Name",
+                        "description": "Business Name",
+                        "type": "string",
+                        "example": "Abc Company Inc"
+                    },
+                    "business_email": {
+                        "title": "Business Email",
+                        "description": "Business Email",
+                        "type": "string",
+                        "example": "abc@gmail.com"
+                    },
+                    "business_address": {
+                        "title": "Business Address",
+                        "description": "Business Address",
+                        "type": "string",
+                        "example": "Abc Street 4"
+                    },
+                    "cnic": {
+                        "title": "Nic Number",
+                        "description": "Nic Number",
+                        "type": "string",
+                        "example": "42101-4765337-9"
+                    }
+                }
+            },
+            "Shop": {
+                "title": "Vendor Shop",
+                "description": "Shop model",
+                "properties": {
+                    "shop_name": {
+                        "title": "Shop Name",
+                        "description": "Shop Name",
+                        "type": "string",
+                        "example": "Test Shop"
+                    },
+                    "slug": {
+                        "title": "Slug",
+                        "description": "Slug",
+                        "type": "string",
+                        "example": "test-shop"
+                    },
+                    "shopimage": {
+                        "title": "Shop image",
+                        "description": "Shop image",
+                        "type": "string",
+                        "format": "binary",
+                        "example": "abc.png"
+                    }
+                }
+            },
+            "StoreCustomerRequest": {
+                "title": "Store Customer request",
+                "description": "Store customer request body data",
+                "required": [
+                    "fullname",
+                    "email",
+                    "phone",
+                    "password",
+                    "password_confirmation"
+                ],
+                "properties": {
+                    
+                    "fullname": {
+                        "title": "Full Name",
+                        "description": "Full Name",
+                        "type": "string",
+                        "example": "John Kendy"
+                    },
+                    "email": {
+                        "title": "Customer Email",
+                        "description": "Customer Email",
+                        "type": "string",
+                        "format": "email",
+                        "pattern": "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).+$",
+                        "example": "john@yahoo.com"
+                    },
+                    "phone": {
+                        "title": "Phone Number",
+                        "description": "Phone Number",
+                        "type": "string",
+                        "example": "+923453289764"
+                    },
+                    "password": {
+                        "title": "Password",
+                        "description": "Password",
+                        "type": "string",
+                        "example": "123456"
+                    },
+                    "password_confirmation": {
+                        "title": "Confirm Password",
+                        "description": "Confirm Password",
+                        "type": "string",
+                        "example": "123456"
+                    }
+                },
+                "type": "object"
+            },
+            "StoreVendorRequest": {
+                "title": "Store Vendor request",
+                "description": "Store Vendor request body data",
+                "required": [
+                    "first_name",
+                    "last_name",
+                    "phone_no",
+                    "alternate_phone_no",
+                    "password",
+                    "password_confirmation",
+                    "business_name",
+                    "business_name",
+                    "business_email",
+                    "business_address",
+                    "city",
+                    "state",
+                    "cnic",
+                    "t&cs"
+                ],
+                "properties": {
+                    "first_name": {
+                        "title": "First Name",
+                        "description": "First Name",
+                        "type": "string",
+                        "example": "John"
+                    },
+                    "last_name": {
+                        "title": "Last Name",
+                        "description": "Last Name",
+                        "type": "string",
+                        "example": "Mike"
+                    },
+                    "phone_no": {
+                        "title": "Phone Number",
+                        "description": "Phone Number",
+                        "type": "string",
+                        "example": "+923453289764"
+                    },
+                    "alternate_phone_no": {
+                        "title": "Alternate Phone Number",
+                        "description": "Alternate Phone Number",
+                        "type": "string",
+                        "example": "+923453289764"
+                    },
+                    "password": {
+                        "title": "Password",
+                        "description": "Password",
+                        "type": "string",
+                        "example": "123456"
+                    },
+                    "password_confirmation": {
+                        "title": "Confirm Password",
+                        "description": "Confirm Password",
+                        "type": "string",
+                        "example": "123456"
+                    },
+                    "business_name": {
+                        "title": "Business Name",
+                        "description": "Business Name",
+                        "type": "string",
+                        "example": "Abc Company Inc"
+                    },
+                    "business_email": {
+                        "title": "Business Email",
+                        "description": "Business Email",
+                        "type": "string",
+                        "example": "test@yahoo.com"
+                    },
+                    "business_address": {
+                        "title": "Business Address",
+                        "description": "Business Address",
+                        "type": "string",
+                        "example": "Abc Street 4"
+                    },
+                    "city": {
+                        "title": "City",
+                        "description": "City",
+                        "type": "string",
+                        "example": "Karachi"
+                    },
+                    "state": {
+                        "title": "State",
+                        "description": "State",
+                        "type": "string",
+                        "example": "Sindh"
+                    },
+                    "cnic": {
+                        "title": "Nic Number",
+                        "description": "Nic Number",
+                        "type": "string",
+                        "example": "42101-6324567-6"
+                    },
+                    "t&cs": {
+                        "title": "Terms and Conditions",
+                        "description": "Terms and Conditions",
+                        "type": "boolean",
+                        "example": "yes"
+                    }
+                },
+                "type": "object"
+            },
+            "PasswordChange": {
+                "title": "Change Password request",
+                "description": "Change Password request",
+                "required": [
+                    "Oldpassword",
+                    "password",
+                    "password_confirmation"
+                ],
+                "properties": {
+                    "Oldpassword": {
+                        "title": "Password",
+                        "description": "Password",
+                        "type": "string",
+                        "example": "123456"
+                    },
+                    "password": {
+                        "title": "Password",
+                        "description": "Password",
+                        "type": "string",
+                        "example": "123456"
+                    },
+                    "password_confirmation": {
+                        "title": "Confirm Password",
+                        "description": "Confirm Password",
+                        "type": "string",
+                        "example": "123456"
+                    }
+
+
+                },
+                "type": "object"
+            },
+            "Color":{
+                "title":"color",
+                "description":"color Array",
+                "type":"array",
+                "items":{
+                    "title":"color",
+                    "description":"color Model",
+                    "properties":{
+                        "title":{
+                            "title":"Title",
+                            "description":"Title",
+                            "type":"string",
+                            "example":"Red"
+                        }
+                    }
+                }
+            },
+            "Category":{
+                "title":"Category",
+                "description":"Category Array",
+                "type":"array",
+                "items":{
+                    "title":"Categoy",
+                    "description":"Categoy Model",
+                    "properties":{
+                        "title":{
+                            "title":"Title",
+                            "description":"Title",
+                            "type":"string",
+                            "example":"Electronics"
+                        }
+                    }
+                }
+            },
+            "SubCategory":{
+                "title":"SubCategory",
+                "description":"SubCategory Array",
+                "type":"array",
+                "items":{
+                    "title":"SubCategory",
+                    "description":"SubCategory Model",
+                    "properties":{
+                        "title":{
+                            "title":"Title",
+                            "description":"Title",
+                            "type":"string",
+                            "example":"Laptops"
+                        }
+                    }
+                }
+            },
+            "ChildCategory":{
+                "title":"Child Category",
+                "description":"Child Category Array",
+                "type":"array",
+                "items":{
+                    "title":"Child Category",
+                    "description":"Child Category Model",
+                    "properties":{
+                        "title":{
+                            "title":"Title",
+                            "description":"Title",
+                            "type":"string",
+                            "example":"Gaming Laptops"
+                        }
+                    }
+                }
+            },
+            "Commissions":{
+                "title":"Commissions",
+                "description":"Commissions Array",
+                "type":"array",
+                "items":{
+                    "$ref":"#/components/schemas/Commission"
+                }
+            },
+            "Commission":{
+                "title":"Commission",
+                "description":"Commission Model",
+                "properties":{
+                    "category_id":{
+                        "title":"Main Category",
+                        "description":"Main Category",
+                        "type":"string",
+                        "example":"Automotive & Motorbike"
+                    },
+                    "main_rate":{
+                        "title":"Main Category Rate",
+                        "description":"Main Category Rate",
+                        "type":"number",
+                        "format":"float",
+                        "example":4.5
+                    },
+                    "parent_id":{
+                        "title":"Parent Category",
+                        "description":"Parent Category",
+                        "type":"string",
+                        "example":"Automotive"
+                    },
+                    "parent_rate":{
+                        "title":"Parent Category Rate",
+                        "description":"Parent Category Rate",
+                        "type":"number",
+                        "format":"float",
+                        "example":4.5
+                    },
+                    "child_id":{
+                        "title":"Child Category",
+                        "description":"Child Category",
+                        "type":"string",
+                        "example":"Auto Tires & Wheels"
+                    },
+                    "child_rate":{
+                        "title":"Child Category Rate",
+                        "description":"Child Category Rate",
+                        "type":"number",
+                        "format":"float",
+                        "example":4.5
+                    }
+                }
+            },
+            "Arrangement": {
+                "type": "string",
+                "enum": [
+                   "asc",
+                   "desc"
+                ]
+            },
+            "CommissionSort": {
+                "type": "string",
+                "enum": [
+                   "main_rate",
+                   "parent_rate",
+                   "child_rate"
+                ]
+            },
+            "Orders":{
+                "title":"Orders",
+                "description":"Orders Array",
+                "type":"array",
+                "items":{
+                    "$ref":"#/components/schemas/Order"
+                }
+            },
+            "Order":{
+                "title":"Order",
+                "description":"Order Model",
+                "properties":{
+                    "order_id":{
+                        "title":"Order ID",
+                        "description":"Order ID",
+                        "type":"string",
+                        "example":1239293
+                    },
+                    "Cutomer Name":{
+                        "title":"Customer",
+                        "description":"Customer Array",
+                        "type":"string",
+                        "example":"Haris"
+                    },
+                    "date":{
+                        "title":"Date",
+                        "description":"DATE",
+                        "type":"string",
+                        "example":"2021-04-14 20:22:33"
+                    },
+                    "status":{
+                        "title":"Status",
+                        "description":"Status",
+                        "type":"string",
+                        "example":"Complete"
+                    }
+                }
+            },
+            "OrderSort": {
+                "type": "string",
+                "enum": [
+                   "order_id",
+                   "name",
+                   "status",
+                   "created_at"
+                ]
+            },
+            "OrderStatusFilter":{
+                "type": "string",
+                "enum": [
+                   "All",
+                   "Complete",
+                   "In Process",
+                   "Pending",
+                   "Ship",
+                   "Cancel"
+                ]
+            },
+            "BankInfoList":{
+                "title":"Bank Info",
+                "description":"BankInfo Array",
+                "type":"array",
+                "items":{
+                    "$ref":"#/components/schemas/BankInfo"
+                }
+            },
+            "BankInfo":{
+                "title":"BankInfo",
+                "description":"BankInfo Model",
+                "required": [
+                    "account_title",
+                    "account_no",
+                    "phone_no",
+                    "bank_name",
+                    "branch_code"
+                ],
+                "properties":{
+                    "account_title":{
+                        "title":"Account Title",
+                        "description":"Account Title",
+                        "type":"string",
+                        "example":"Haris"
+                    },
+                    "account_no":{
+                        "title":"Account Number",
+                        "description":"Account Number",
+                        "type":"string",
+                        "example":"10170913425437322"
+                    },
+                    "bank_name":{
+                        "title":"Bank Name",
+                        "description":"Bank Name",
+                        "type":"string",
+                        "example":"Meezan Bank"
+                    },
+                    "branch_code":{
+                        "title":"Branch Code",
+                        "description":"Branch Code",
+                        "type":"string",
+                        "example":"0912"
+                    }
+                }
+            },
+            "BankInfoSort": {
+                "type": "string",
+                "enum": [
+                   "id",
+                   "account_title",
+                   "acccount_no",
+                   "bank_name",
+                   "branch_code"
+                ]
+            },
+            "WalletSort": {
+                "type": "string",
+                "enum": [
+                   "id",
+                   "amount",
+                   "sdate",
+                   "edate"
+                ]
+            },
+            "WalletList":{
+                "title":"Wallet",
+                "description":"Wallet Array",
+                "type":"array",
+                "items":{
+                    "$ref":"#/components/schemas/Wallet"
+                }
+            },
+            "Wallet":{
+                "title":"Wallet",
+                "description":"Wallet Model",
+                "properties":{
+                    "id":{
+                        "title":"ID",
+                        "description":"ID",
+                        "type":"integer",
+                        "example":1
+                    },
+                    "Vendor":{
+                        "title":"Vendor Data",
+                        "properties":{
+                            "id":{
+                                "title":"ID",
+                                "description":"ID",
+                                "type":"integer",
+                                "example":1
+                            },
+                            "business_name":{
+                                "title":"Business Name",
+                                "description":"Business Name",
+                                "type":"string",
+                                "example":"Galaxy"
+                            }
+                        }
+                    },
+                    "file":{
+                        "title":"Slip image",
+                        "description":"Slip image",
+                        "type":"string",
+                        "example":"abc.png"
+                    },
+                    "amount":{
+                        "title":"Amount",
+                        "description":"Amount",
+                        "type":"integer",
+                        "example":"0912"
+                    },
+                    "sdate":{
+                        "title":"Start Date",
+                        "description":"Start Date",
+                        "type":"string",
+                        "example":"2021-05-28"
+                    },
+                    "edate":{
+                        "title":"End Date",
+                        "description":"End Date",
+                        "type":"string",
+                        "example":"2021-05-29"
+                    }
+                }
+            },
+            "Otp":{
+              "title":"Otp",
+              "description":"Otp string",
+              "properties":{
+                  "otp_code":{
+                      "title":"Otp",
+                      "description":"Otp",
+                      "type":"string",
+                      "example":"1234"
+                  }
+              }
+          },
+          "CustomerOrderStatusFilter":{
+            "type": "string",
+            "enum": [
+               "Complete",
+               "In Process",
+               "Pending",
+               "Ship",
+               "Cancel"
+            ]
+        },
+        "UserProfile": {
+            "title": "User Profile",
+            "description": "User Profile model",
+            "properties": {
+
+                "fullname": {
+                    "title": "Full Name",
+                    "description": "Full Name",
+                    "type": "string",
+                    "example": "John"
+                },
+ 
+                "phone": {
+                    "title": "Phone Number",
+                    "description": "Phone Number",
+                    "type": "string",
+                    "example": "3002289157"
+                }
+            }
+        },
+        "Contact": {
+            "required": [
+                "email",
+                "name",
+                "subject",
+                "message"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "example": "Haris"
+                },
+                "email": {
+                    "type": "string",
+                    "format": "email",
+                    "example": "user1@mail.com"
+                },
+                "subject": {
+                    "type": "string",
+                    "example": "Query"
+                },
+                "message": {
+                    "type": "string",
+                    "example": "Some text"
+                }
+            },
+            "type": "object"
+        },
+        "Subscribe": {
+            "required": [
+                "email"
+            ],
+            "properties": {
+             
+                "email": {
+                    "type": "string",
+                    "format": "email",
+                    "example": "user1@mail.com"
+                }
+            },
+            "type": "object"
+        },
+        "OrderCreate":{
+            "title":"Order",
+            "description":"Order Array",
+            "type":"array",
+            "items":{
+                "$ref":"#/components/schemas/OrderFields"
+            }
+        },
+        "OrderFields": {
+            "title": "Order Fields",
+            "description": "Order Fields",
+            "properties": {
+
+                "cart_id": {
+                    "title": "Cart Id",
+                    "description": "cart id",
+                    "type": "string",
+                    "example": "171"
+                },
+ 
+                "addressInformation": {
+                    "title":"addressInformation",
+                    "description":"addressInformation Array",
+                    "type":"object",
+                    "properties":{
+                        "billingAddress": {
+                            "title":"billingAddress",
+                            "description":"billingAddress Array",
+                            "type":"object",
+                            "properties":{
+                                "name": {
+                                    "title": "name",
+                                    "description": "name",
+                                    "type": "string",
+                                    "example": "Haris"
+                                },
+                                "email": {
+                                    "title": "email",
+                                    "description": "email",
+                                    "type": "string",
+                                    "example": "abc@gmail.com"
+                                },
+                                "telephone": {
+                                    "title": "telephone",
+                                    "description": "telephone",
+                                    "type": "string",
+                                    "example": "03342048957"
+                                },
+                                "city": {
+                                    "title": "city",
+                                    "description": "city",
+                                    "type": "string",
+                                    "example": "Karachi"
+                                },
+                                "postcode": {
+                                    "title": "postcode",
+                                    "description": "zipcode",
+                                    "type": "string",
+                                    "example": "6922"
+                                },
+                                "state": {
+                                    "title": "state",
+                                    "description": "state",
+                                    "type": "string",
+                                    "example": "Sindh"
+                                },
+                                "address": {
+                                    "title": "address",
+                                    "description": "address",
+                                    "type": "string",
+                                    "example": "B-299"
+                                },
+                                "message": {
+                                    "title": "message",
+                                    "description": "message",
+                                    "type": "string",
+                                    "example": "Something"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "AddtoCart":{
+            "title": "AddtoCart Fields",
+            "description": "AddtoCart Fields",
+            "properties": {
+
+                "qty": {
+                    "title": "Quantity",
+                    "description": "Quantity",
+                    "type": "integer",
+                    "example": "2"
+                },
+                "slug": {
+                    "title": "slug",
+                    "description": "slug product",
+                    "type": "string",
+                    "example": "WS12-XS-Orange"
+                },
+                "color":{
+                    "title": "color",
+                    "description": "color product",
+                    "type": "string",
+                    "example": "Orange"
+                },
+                "size":{
+                    "title": "size",
+                    "description": "size product",
+                    "type": "string",
+                    "example": "M"
+                }
+            }
+
+        }
+        
+
+        },
+
+        "securitySchemes": {
+            "apiAuth": {
+                "type": "http",
+                "description": "Login with email and password to get the authentication token",
+                "name": "Token based Based",
+                "in": "header",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            },
+            "passport": {
+                "type": "oauth2",
+                "description": "Laravel passport oauth2 security.",
+                "in": "header",
+                "scheme": "https",
+                "flows": {
+                    "password": {
+                        "authorizationUrl": "http://localhost/oauth/authorize",
+                        "tokenUrl": "http://localhost/oauth/token",
+                        "refreshUrl": "http://localhost/token/refresh",
+                        "scopes": []
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
+

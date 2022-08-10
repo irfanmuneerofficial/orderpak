@@ -1,0 +1,8 @@
+.cs-admin_alert button.close{
+    opacity: 1!important;
+    color: #fff!important;
+}
+.cs-admin_alert ul {
+    height: 80px;
+    overflow-y: scroll;
+}
